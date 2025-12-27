@@ -14,7 +14,7 @@ import {
 } from "./utils";
 
 export async function run(): Promise<void> {
-    if (process.env.RUNNER_OS !== "Linux") {
+    if (process.env.RUNNER_OS?.toLowerCase() !== "linux") {
         throw new Error("buildah, and therefore this action, only works on Linux. Please use a Linux runner.");
     }
 
